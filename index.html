@@ -214,7 +214,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
 <body>
 
 <div class="wrap">
-  <div class="header">
+  <div class="header" id="mainHeader">
     <div class="badge"><span></span> Vagas Limitadas</div>
     <h1>Garanta Sua Vaga na<br/><em>Aula Gratuita de Biossegurança e NR-32</em></h1>
     <p class="subtitle">Responda 4 perguntas rápidas e receba o acesso exclusivo à aula</p>
@@ -421,6 +421,11 @@ function goStep(n) {
     backgroundSync();
   }
 
+  const header = document.getElementById('mainHeader');
+  if (header) {
+    header.style.display = n === 1 ? 'block' : 'none';
+  }
+
   current.classList.remove('active');
   document.getElementById('step' + n).classList.add('active');
   updateProgress(n);
@@ -462,6 +467,8 @@ async function submitForm() {
     document.getElementById('step4').classList.remove('active');
     document.getElementById('step5').classList.add('active');
     document.getElementById('progressWrap').style.display = 'none';
+    const header = document.getElementById('mainHeader');
+    if (header) header.style.display = 'none';
   }, 600);
 }
 

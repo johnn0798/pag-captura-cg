@@ -410,15 +410,12 @@ function goStep(n) {
     if (!nome || !wa || !em) { showToast('Preencha todos os campos!'); return; }
     if (!em.includes('@')) { showToast('E-mail inválido!'); return; }
     answers.nome = nome; answers.whatsapp = wa; answers.email = em;
-    backgroundSync();
   }
   if (n === 3) {
     if (!answers.dificuldade) { showToast('Selecione uma opção!'); return; }
-    backgroundSync();
   }
   if (n === 4) {
     if (!answers.faturamento) { showToast('Selecione uma opção!'); return; }
-    backgroundSync();
   }
 
   const header = document.getElementById('mainHeader');

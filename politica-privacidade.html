@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Política de Privacidade | Golden Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --gold: #F3B11A;
+  --gold-light: #FCD34D;
+  --bg: #0D0D0D;
+  --text: #FFFFFF;
+  --text-muted: rgba(255,255,255,0.6);
+  --border: rgba(243,177,26,0.2);
+  --radius: 24px;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(219,39,119,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(30,58,138,0.1) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.wrap {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+.card {
+  background: linear-gradient(to bottom, rgba(30,30,30,0.6), rgba(10,10,10,0.8));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(243,177,26,0.05), inset 0 1px 0 rgba(243,177,26,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
+}
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin-bottom: 24px;
+  text-align: center;
+}
+.content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+.content a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.content a:hover {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+.content ul {
+  margin-bottom: 16px;
+  padding-left: 20px;
+}
+.content li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.back-btn:hover {
+  color: var(--gold);
+}
+@media(max-width: 580px){
+  .card { padding: 32px 24px; }
+  .content h2 { font-size: 28px; }
+  .content h3 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a href="index.html" class="back-btn">← Voltar</a>
+  
+  <div class="card">
+    <div class="content">
+      <h2>Política de Privacidade</h2>
+      <p>A sua privacidade é importante para nós. É política do goldenclub respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href="https://pag-aula-nr32.vercel.app/" target="_blank" rel="noopener noreferrer">goldenclub</a>, e outros sites que possuímos e operamos.</p>
+      <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</p>
+      <p>Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
+      <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</p>
+      <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas <a href="https://politicaprivacidade.com/" rel="noopener noreferrer" target="_blank">políticas de privacidade</a>.</p>
+      <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</p>
+      <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</p>
+      
+      <ul>
+        <li>O serviço Google AdSense que usamos para veicular publicidade usa um cookie DoubleClick para veicular anúncios mais relevantes em toda a Web e limitar o número de vezes que um determinado anúncio é exibido para você.</li>
+        <li>Para mais informações sobre o Google AdSense, consulte as FAQs oficiais sobre privacidade do Google AdSense.</li>
+        <li>Utilizamos anúncios para compensar os custos de funcionamento deste site e fornecer financiamento para futuros desenvolvimentos. Os cookies de publicidade comportamental usados por este site foram projetados para garantir que você forneça os anúncios mais relevantes sempre que possível, rastreando anonimamente seus interesses e apresentando coisas semelhantes que possam ser do seu interesse.</li>
+        <li>Vários parceiros anunciam em nosso nome e os cookies de rastreamento de afiliados simplesmente nos permitem ver se nossos clientes acessaram o site através de um dos sites de nossos parceiros, para que possamos creditá-los adequadamente e, quando aplicável, permitir que nossos parceiros afiliados ofereçam qualquer promoção que pode fornecê-lo para fazer uma compra.</li>
+      </ul>
+
+      <h3>Compromisso do Usuário</h3>
+      <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o goldenclub oferece no site e com caráter enunciativo, mas não limitativo:</p>
+      <ul>
+        <li>A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;</li>
+        <li>B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, jogos de sorte ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</li>
+        <li>C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do goldenclub, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</li>
+      </ul>
+
+      <h3>Mais informações</h3>
+      <p>Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</p>
+      <p>Esta política é efetiva a partir de 11 May 2026 14:16</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

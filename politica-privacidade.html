@@ -10,12 +10,12 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 :root {
-  --gold: #F3B11A;
-  --gold-light: #FCD34D;
-  --bg: #0D0D0D;
-  --text: #FFFFFF;
-  --text-muted: rgba(255,255,255,0.6);
-  --border: rgba(243,177,26,0.2);
+  --gold: #C8A165;
+  --gold-light: #e8d5b0;
+  --bg: #101010;
+  --text: #EBE4D5;
+  --text-muted: rgba(235,228,213,0.6);
+  --border: rgba(200,161,101,0.2);
   --radius: 24px;
 }
 body {
@@ -35,8 +35,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(219,39,119,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(30,58,138,0.1) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(200,161,101,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(26,54,43,0.15) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -47,12 +47,12 @@ body::before {
   z-index: 1;
 }
 .card {
-  background: linear-gradient(to bottom, rgba(30,30,30,0.6), rgba(10,10,10,0.8));
+  background: linear-gradient(to bottom, rgba(26,54,43,0.6), rgba(16,16,16,0.8));
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 40px;
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(243,177,26,0.05), inset 0 1px 0 rgba(243,177,26,0.1);
+  box-shadow: 0 0 30px rgba(200,161,101,0.05), inset 0 1px 0 rgba(200,161,101,0.1);
   position: relative;
   overflow: hidden;
 }

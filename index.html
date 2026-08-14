@@ -83,13 +83,13 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
 }
 .incentive-bar strong{color:var(--gold);font-weight:600}
 
-/* COUNTDOWN ELEGANTE */
+/* COUNTDOWN ELEGANTE (MENOR) */
 .countdown-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: 15px;
 }
 .countdown-item {
   display: flex;
@@ -100,24 +100,24 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
 .countdown-item:not(:last-child)::after {
   content: ':';
   position: absolute;
-  right: -10px;
-  top: 15px;
+  right: -7px;
+  top: 8px;
   color: var(--gold-dim);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 300;
   animation: pulse 2s infinite;
 }
 .time-block {
   background: linear-gradient(180deg, rgba(200,161,101,0.1) 0%, rgba(10,10,10,0.6) 100%);
-  padding: 12px 18px;
-  border-radius: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
   border: 1px solid rgba(200,161,101,0.3);
   color: var(--text);
   font-weight: 300;
-  font-size: 32px;
+  font-size: 20px;
   font-family: 'Playfair Display', serif;
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.05), 0 4px 15px rgba(0,0,0,0.3);
-  min-width: 65px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 10px rgba(0,0,0,0.3);
+  min-width: 45px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -133,12 +133,12 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
     z-index: 1;
 }
 .time-label {
-  font-size: 10px;
+  font-size: 8px;
   color: var(--text-muted);
   text-transform: uppercase;
-  margin-top: 8px;
+  margin-top: 5px;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 /* PROGRESS */
@@ -243,17 +243,17 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
 .success-sub{text-align:center;color:var(--text-muted);font-size:16px;line-height:1.6;margin-bottom:32px;font-weight:300}
 .info-box{
   background:rgba(255,255,255,0.03);border:1px solid var(--border);
+/* INFO BOX (STEP 5) */
+.info-box{
+  background:rgba(255,255,255,0.03);border:1px solid var(--border);
   border-radius:16px;padding:24px;margin-bottom:20px;
   text-align:left;
 }
 .info-box p{font-size:15px;line-height:1.6;color:var(--text);font-weight:300}
 .info-box strong{color:var(--gold);font-weight:600}
 
-/* COUNTDOWN */
-.countdown-box { display: flex; gap: 12px; justify-content: center; margin-top: 16px; }
-.countdown-item { display: flex; flex-direction: column; align-items: center; }
-.time-block { background: rgba(10,10,10,0.8); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--gold); color: var(--gold-light); font-weight: 800; font-size: 22px; font-family: 'Inter', sans-serif; box-shadow: 0 0 10px rgba(200,161,101,0.2); }
-.time-label { font-size: 11px; color: var(--gold); text-transform: uppercase; margin-top: 6px; font-weight: 600; letter-spacing: 1px; }
+/* REMOVER O SEGUNDO ESTILO DO COUNTDOWN DUPLICADO NO FINAL */
+/* COUNTDOWN (Removido para evitar conflitos com o Countdown Elegante) */
 
 /* FOOTER */
 .footer{text-align:center;margin-top:24px;font-size:13px;color:var(--text-muted);font-weight:300}

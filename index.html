@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Aula Gratuita de Biossegurança e NR-32 | Inscreva-se</title>
-<meta name="description" content="Responda algumas perguntas e garanta sua vaga na aula gratuita de Biossegurança e NR-32 para bronzeadoras."/>
+<title>Oferta Exclusiva: Golden Club Ao Vivo</title>
+<meta name="description" content="Responda algumas perguntas e libere sua condição especial para o Golden Club Ao Vivo."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -82,6 +82,64 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 .incentive-bar strong{color:var(--gold);font-weight:600}
+
+/* COUNTDOWN ELEGANTE */
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.countdown-item:not(:last-child)::after {
+  content: ':';
+  position: absolute;
+  right: -10px;
+  top: 15px;
+  color: var(--gold-dim);
+  font-size: 24px;
+  font-weight: 300;
+  animation: pulse 2s infinite;
+}
+.time-block {
+  background: linear-gradient(180deg, rgba(200,161,101,0.1) 0%, rgba(10,10,10,0.6) 100%);
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(200,161,101,0.3);
+  color: var(--text);
+  font-weight: 300;
+  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.05), 0 4px 15px rgba(0,0,0,0.3);
+  min-width: 65px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.time-block::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+.time-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 8px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
 
 /* PROGRESS */
 .progress-wrap{margin-bottom:24px}
@@ -191,6 +249,12 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
 .info-box p{font-size:15px;line-height:1.6;color:var(--text);font-weight:300}
 .info-box strong{color:var(--gold);font-weight:600}
 
+/* COUNTDOWN */
+.countdown-box { display: flex; gap: 12px; justify-content: center; margin-top: 16px; }
+.countdown-item { display: flex; flex-direction: column; align-items: center; }
+.time-block { background: rgba(10,10,10,0.8); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--gold); color: var(--gold-light); font-weight: 800; font-size: 22px; font-family: 'Inter', sans-serif; box-shadow: 0 0 10px rgba(200,161,101,0.2); }
+.time-label { font-size: 11px; color: var(--gold); text-transform: uppercase; margin-top: 6px; font-weight: 600; letter-spacing: 1px; }
+
 /* FOOTER */
 .footer{text-align:center;margin-top:24px;font-size:13px;color:var(--text-muted);font-weight:300}
 
@@ -215,11 +279,14 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
 
 <div class="wrap">
   <div class="header" id="mainHeader">
-    <div class="badge"><span></span> Vagas Limitadas</div>
-    <h1>Garanta Sua Vaga na<br/><em>Aula Gratuita de Biossegurança e NR-32</em></h1>
-    <p class="subtitle">Responda 4 perguntas rápidas e receba o acesso exclusivo à aula</p>
+    <div class="badge"><span></span> Oferta Válida Somente Hoje</div>
+    <h1>Condição Exclusiva:<br/><em>Golden Club Ao Vivo</em></h1>
+    <p class="subtitle">O maior evento do ano acontece no <strong>próximo mês</strong>! Responda 4 perguntas rápidas e libere seu convite com desconto único.</p>
     <div class="incentive-bar">
-      📚 O <strong>Material de Apoio para estudo</strong> será enviado no e-mail ou WhatsApp cadastrado ao término da aula — <strong>Terça, 19/05</strong>
+      ⏳ <strong>ATENÇÃO:</strong> Esta oferta especial e os bônus expiram hoje à meia-noite!
+      <div class="countdown-box" id="timer">
+         <!-- Contador será renderizado aqui -->
+      </div>
     </div>
   </div>
 
@@ -235,7 +302,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
     <!-- STEP 1: Dados -->
     <div class="step active" id="step1">
       <div class="step-title">👋 Vamos começar!</div>
-      <p class="step-desc">Precisamos de algumas informações para garantir sua vaga.</p>
+      <p class="step-desc">Preencha seus dados para verificar a disponibilidade e liberar sua condição especial.</p>
       <div class="field">
         <label for="nome">Nome completo</label>
         <input type="text" id="nome" placeholder="Seu nome completo"/>
@@ -255,28 +322,28 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
     <!-- STEP 2: Dificuldade -->
     <div class="step" id="step2">
       <button class="back-btn" onclick="goStep(1)">← Voltar</button>
-      <div class="step-title">🎯 Principal Dificuldade</div>
-      <p class="step-desc">Qual é a sua maior dificuldade hoje como bronzeadora?</p>
+      <div class="step-title">🎯 Desafio Atual</div>
+      <p class="step-desc">Qual é o seu principal desafio no negócio hoje?</p>
       <div class="options" id="opts2">
-        <div class="option" onclick="selectOpt(this,'dificuldade','biossegurança')">
+        <div class="option" onclick="selectOpt(this,'desafio','clientes')">
           <div class="option-radio"></div>
-          <div><div class="option-text">Falta de conhecimento em Biossegurança e NR-32</div>
-          <div class="option-sub">Não sei se estou dentro das normas exigidas</div></div>
+          <div><div class="option-text">Atrair e reter clientes premium</div>
+          <div class="option-sub">Preciso de clientes que paguem mais pelo meu serviço</div></div>
         </div>
-        <div class="option" onclick="selectOpt(this,'dificuldade','clientes')">
+        <div class="option" onclick="selectOpt(this,'desafio','escala')">
           <div class="option-radio"></div>
-          <div><div class="option-text">Dificuldade em atrair e fidelizar clientes</div>
-          <div class="option-sub">Preciso crescer minha base de clientes</div></div>
+          <div><div class="option-text">Escalar o faturamento e os lucros</div>
+          <div class="option-sub">Sinto que estagnei e não consigo crescer mais</div></div>
         </div>
-        <div class="option" onclick="selectOpt(this,'dificuldade','financeiro')">
+        <div class="option" onclick="selectOpt(this,'desafio','equipe')">
           <div class="option-radio"></div>
-          <div><div class="option-text">Precificação e gestão financeira do estúdio</div>
-          <div class="option-sub">Não sei se estou cobrando o valor certo</div></div>
+          <div><div class="option-text">Criar processos e gerenciar equipe</div>
+          <div class="option-sub">Trabalho muito no operacional e falta tempo</div></div>
         </div>
-        <div class="option" onclick="selectOpt(this,'dificuldade','autoridade')">
+        <div class="option" onclick="selectOpt(this,'desafio','autoridade')">
           <div class="option-radio"></div>
-          <div><div class="option-text">Falta de credibilidade e autoridade no mercado</div>
-          <div class="option-sub">Quero me posicionar como referência</div></div>
+          <div><div class="option-text">Posicionamento e autoridade no mercado</div>
+          <div class="option-sub">Quero me tornar a principal referência da minha região</div></div>
         </div>
       </div>
       <button class="btn btn-primary" onclick="goStep(3)">Continuar →</button>
@@ -286,7 +353,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
     <div class="step" id="step3">
       <button class="back-btn" onclick="goStep(2)">← Voltar</button>
       <div class="step-title">💰 Faturamento Atual</div>
-      <p class="step-desc">Qual é o faturamento mensal do seu espaço hoje?</p>
+      <p class="step-desc">Qual é o faturamento mensal do seu negócio hoje?</p>
       <div class="options" id="opts3">
         <div class="option" onclick="selectOpt(this,'faturamento','Menos de R$2.000')">
           <div class="option-radio"></div>
@@ -316,43 +383,43 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--g
     <div class="step" id="step4">
       <button class="back-btn" onclick="goStep(3)">← Voltar</button>
       <div class="step-title">🚀 Seu Grande Objetivo</div>
-      <p class="step-desc">Qual é o seu maior objetivo nos próximos 12 meses?</p>
+      <p class="step-desc">O que você mais busca ao participar do Golden Club Ao Vivo?</p>
       <div class="options" id="opts4">
-        <div class="option" onclick="selectOpt(this,'objetivo','regularizar')">
+        <div class="option" onclick="selectOpt(this,'objetivo','networking')">
           <div class="option-radio"></div>
-          <div><div class="option-text">Regularizar meu estúdio e trabalhar com segurança</div>
-          <div class="option-sub">Quero estar 100% dentro das normas</div></div>
+          <div><div class="option-text">Networking de Alto Nível</div>
+          <div class="option-sub">Me conectar com grandes nomes do mercado</div></div>
         </div>
-        <div class="option" onclick="selectOpt(this,'objetivo','faturamento')">
+        <div class="option" onclick="selectOpt(this,'objetivo','estrategias')">
           <div class="option-radio"></div>
-          <div><div class="option-text">Aumentar meu faturamento e expandir o negócio</div>
-          <div class="option-sub">Quero crescer financeiramente</div></div>
+          <div><div class="option-text">Estratégias Práticas e Inovadoras</div>
+          <div class="option-sub">Aprender o que realmente funciona hoje</div></div>
         </div>
-        <div class="option" onclick="selectOpt(this,'objetivo','referencia')">
+        <div class="option" onclick="selectOpt(this,'objetivo','parcerias')">
           <div class="option-radio"></div>
-          <div><div class="option-text">Me tornar referência no mercado de bronzeamento</div>
-          <div class="option-sub">Quero ser reconhecida como autoridade</div></div>
+          <div><div class="option-text">Fazer Parcerias e Negócios</div>
+          <div class="option-sub">Expandir minha rede de contatos</div></div>
         </div>
-        <div class="option" onclick="selectOpt(this,'objetivo','escalar')">
+        <div class="option" onclick="selectOpt(this,'objetivo','mentalidade')">
           <div class="option-radio"></div>
-          <div><div class="option-text">Montar uma equipe e escalar meu negócio</div>
-          <div class="option-sub">Quero criar um negócio sólido e escalável</div></div>
+          <div><div class="option-text">Mentalidade e Insights Premium</div>
+          <div class="option-sub">Virar a chave para os próximos milhões</div></div>
         </div>
       </div>
-      <button class="btn btn-primary" id="btnSubmit" onclick="submitForm()">🔓 Garantir Minha Vaga</button>
+      <button class="btn btn-primary" id="btnSubmit" onclick="submitForm()">🔓 Liberar Minha Oferta</button>
     </div>
 
     <!-- STEP 5: Sucesso -->
     <div class="step" id="step5">
       <div style="text-align:center">
-        <div class="success-icon">🎉</div>
-        <div class="success-title">Vaga Garantida!</div>
-        <p class="success-sub">Parabéns! Você está na lista da <strong style="color:var(--gold)">Aula Gratuita de Biossegurança e NR-32</strong>. Fique de olho no seu WhatsApp!</p>
+        <div class="success-icon">🎫</div>
+        <div class="success-title">Condição Liberada!</div>
+        <p class="success-sub">Parabéns! O seu convite com <strong style="color:var(--gold)">Desconto Especial</strong> para o Golden Club Ao Vivo foi gerado com sucesso.</p>
         <div class="info-box">
-          <p>📱 <strong>Próximo passo:</strong> Em breve você receberá uma mensagem no WhatsApp com todos os detalhes de acesso à aula gratuita — <strong>Terça-feira, 19/05</strong>.</p>
+          <p>📱 <strong>Fique de olho no seu WhatsApp:</strong> A nossa especialista <strong>Hellena</strong> entrará em contato com você em breve para liberar o seu link de inscrição exclusivo.</p>
         </div>
         <div class="info-box">
-          <p>🎁 <strong>Seu bônus:</strong> Ao final da aula do dia 12, você receberá o <strong>Material de Apoio completo</strong> diretamente no seu WhatsApp ou e-mail cadastrado. Fique de olho!</p>
+          <p>📍 <strong>Prepare-se:</strong> O evento presencial acontecerá no <strong>próximo mês</strong>. Nos vemos lá!</p>
         </div>
       </div>
     </div>
@@ -391,6 +458,43 @@ function doPost(e) {
 const answers = {};
 const totalSteps = 4;
 
+// =============================================
+// LÓGICA DO CONTADOR
+// =============================================
+function startTimer() {
+  const timerEl = document.getElementById('timer');
+  if(!timerEl) return;
+  
+  // Configura a expiração para a meia-noite do dia atual
+  const now = new Date();
+  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+
+  const updateTimer = () => {
+    const current = new Date();
+    const diff = midnight - current;
+    
+    if (diff <= 0) {
+      timerEl.innerHTML = '<div style="color:var(--gold); font-weight:700;">Oferta Expirada</div>';
+      return;
+    }
+
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    timerEl.innerHTML = `
+      <div class="countdown-item"><div class="time-block">${String(h).padStart(2,'0')}</div><span class="time-label">Horas</span></div>
+      <div class="countdown-item"><div class="time-block">${String(m).padStart(2,'0')}</div><span class="time-label">Min</span></div>
+      <div class="countdown-item"><div class="time-block">${String(s).padStart(2,'0')}</div><span class="time-label">Seg</span></div>
+    `;
+  };
+  
+  updateTimer(); // Executa imediatamente
+  setInterval(updateTimer, 1000);
+}
+startTimer();
+// =============================================
+
 function updateProgress(step) {
   const pct = Math.round((step / totalSteps) * 100);
   document.getElementById('progressFill').style.width = pct + '%';
@@ -412,7 +516,7 @@ function goStep(n) {
     answers.nome = nome; answers.whatsapp = wa; answers.email = em;
   }
   if (n === 3) {
-    if (!answers.dificuldade) { showToast('Selecione uma opção!'); return; }
+    if (!answers.desafio) { showToast('Selecione uma opção!'); return; }
   }
   if (n === 4) {
     if (!answers.faturamento) { showToast('Selecione uma opção!'); return; }

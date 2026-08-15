@@ -461,9 +461,9 @@ function startTimer() {
   const timerEl = document.getElementById('timer');
   if(!timerEl) return;
   
-  // Configura a expiração para a meia-noite do dia atual
+  // Configura a expiração para hoje às 23:59:59 (fim do dia atual)
   const now = new Date();
-  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
 
   const updateTimer = () => {
     const current = new Date();

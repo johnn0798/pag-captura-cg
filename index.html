@@ -1,589 +1,290 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Oferta Exclusiva: Golden Club Ao Vivo</title>
-<meta name="description" content="Responda algumas perguntas e libere sua condição especial para o Golden Club Ao Vivo."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --gold:#C8A165;
-  --gold-light:#e8d5b0;
-  --gold-dim:rgba(200,161,101,0.15);
-  --bg:#101010;
-  --bg2:#1A362B;
-  --bg3:rgba(26,54,43,0.5);
-  --text:#EBE4D5;
-  --text-muted:rgba(235,228,213,0.6);
-  --border:rgba(200,161,101,0.2);
-  --radius:24px;
-}
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  padding:20px;
-  position:relative;
-  overflow-x:hidden;
-}
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(200,161,101,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(26,54,43,0.15) 0%, transparent 60%);
-  pointer-events:none;
-  z-index:0;
-}
-.wrap{
-  width:100%;
-  max-width:600px;
-  position:relative;
-  z-index:1;
-  margin: auto 0;
-  padding: 20px 0;
-}
-
-/* HEADER */
-.header{text-align:center;margin-bottom:28px}
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--gold-dim);border:1px solid var(--border);
-  border-radius:50px;padding:6px 16px;
-  font-size:12px;font-weight:700;color:var(--gold);
-  margin-bottom:16px;letter-spacing:1px;text-transform:uppercase;
-}
-.badge span{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-h1{font-family:'Playfair Display',serif;font-size:clamp(28px,6vw,42px);font-weight:800;line-height:1.1;margin-bottom:12px}
-h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 45%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{font-size:16px;color:var(--text-muted);line-height:1.5;font-weight:300}
-
-/* INCENTIVE BAR */
-.incentive-bar{
-  margin-top:20px;
-  background:linear-gradient(135deg,rgba(200,161,101,0.08) 0%, rgba(26,54,43,0.5) 100%);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:14px 20px;
-  font-size:14px;
-  color:var(--text-muted);
-  line-height:1.5;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-.incentive-bar strong{color:var(--gold);font-weight:600}
-
-/* COUNTDOWN ELEGANTE (MENOR) */
-.countdown-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-.countdown-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-.countdown-item:not(:last-child)::after {
-  content: ':';
-  position: absolute;
-  right: -7px;
-  top: 8px;
-  color: var(--gold-dim);
-  font-size: 16px;
-  font-weight: 300;
-  animation: pulse 2s infinite;
-}
-.time-block {
-  background: linear-gradient(180deg, rgba(200,161,101,0.1) 0%, rgba(10,10,10,0.6) 100%);
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(200,161,101,0.3);
-  color: var(--text);
-  font-weight: 300;
-  font-size: 20px;
-  font-family: 'Playfair Display', serif;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 10px rgba(0,0,0,0.3);
-  min-width: 45px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.time-block::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: rgba(0,0,0,0.3);
-    z-index: 1;
-}
-.time-label {
-  font-size: 8px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-top: 5px;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
-/* PROGRESS */
-.progress-wrap{margin-bottom:24px}
-.progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;text-transform:uppercase;letter-spacing:0.5px}
-.progress-label{color:var(--text-muted);font-weight:600}
-.progress-count{color:var(--gold);font-weight:700}
-.progress-bar{height:4px;background:rgba(255,255,255,0.05);border-radius:10px;overflow:hidden}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:10px;transition:width .5s cubic-bezier(.4,0,.2,1)}
-
-/* CARD */
-.card{
-  background:linear-gradient(to bottom, rgba(26,54,43,0.6), rgba(16,16,16,0.8));
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:40px;
-  backdrop-filter:blur(20px);
-  box-shadow:0 0 30px rgba(200,161,101,0.05),inset 0 1px 0 rgba(200,161,101,0.1);
-  position:relative;
-  overflow:hidden;
-}
-.card::before{
-  content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity: 0.5;
-}
-.step{display:none;animation:fadeIn .5s ease}
-.step.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-
-.step-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:8px;color:var(--gold-light)}
-.step-desc{font-size:15px;color:var(--text-muted);margin-bottom:28px;line-height:1.5;font-weight:300}
-
-/* INPUTS */
-.field{margin-bottom:20px}
-.field label{display:block;font-size:12px;font-weight:600;color:var(--gold);margin-bottom:8px;letter-spacing:1px;text-transform:uppercase}
-.field input{
-  width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);
-  border-radius:12px;padding:16px 20px;color:var(--text);
-  font-family:'Inter',sans-serif;font-size:16px;transition:border-color .3s,box-shadow .3s, background .3s;
-  outline:none;
-}
-.field input:focus{border-color:var(--gold);background:rgba(255,255,255,0.05);box-shadow:0 0 0 3px rgba(200,161,101,.1)}
-.field input::placeholder{color:rgba(255,255,255,0.3)}
-
-/* OPTIONS */
-.options{display:flex;flex-direction:column;gap:12px}
-.option{
-  display:flex;align-items:center;gap:16px;
-  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);
-  border-radius:14px;padding:16px 20px;cursor:pointer;
-  transition:all .3s ease;
-  user-select:none;
-}
-.option:hover{border-color:rgba(200,161,101,0.5);background:rgba(255,255,255,0.06);transform:translateY(-2px)}
-.option.selected{border-color:var(--gold);background:linear-gradient(to right, rgba(26,54,43,0.6), rgba(200,161,101,0.1));box-shadow: 0 4px 15px rgba(0,0,0,0.2)}
-.option-radio{
-  width:22px;height:22px;border-radius:50%;
-  border:2px solid rgba(255,255,255,.2);
-  flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  transition:border-color .3s, background .3s;
-}
-.option.selected .option-radio{border-color:var(--gold);background:var(--gold)}
-.option.selected .option-radio::after{content:'';width:8px;height:8px;border-radius:50%;background:#101010}
-.option-text{font-size:15px;line-height:1.4;font-weight:500}
-.option-sub{font-size:13px;color:var(--text-muted);margin-top:4px;font-weight:300}
-
-/* BUTTONS */
-.btn{
-  width:100%;padding:18px;border:none;border-radius:50px;
-  font-family:'Inter',sans-serif;font-size:15px;font-weight:700;
-  cursor:pointer;transition:all .3s ease;margin-top:32px;letter-spacing:1px;text-transform:uppercase;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--gold) 0%,#a8854e 100%);color:#1A362B;
-  box-shadow:0 8px 25px rgba(200,161,101,.2);
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(200,161,101,.3)}
-.btn-primary:active{transform:translateY(0)}
-.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
-
-.back-btn{
-  background:transparent;border:none;color:var(--text-muted);
-  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;
-  display:flex;align-items:center;gap:6px;margin-bottom:24px;
-  padding:0;transition:color .3s;text-transform:uppercase;letter-spacing:1px;
-}
-.back-btn:hover{color:var(--gold)}
-
-/* SUCCESS */
-.success-icon{
-  width:90px;height:90px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 28px;font-size:40px;
-  box-shadow:0 0 50px rgba(200,161,101,.3);
-  animation:pop .6s cubic-bezier(.17,.67,.33,1.4);
-}
-@keyframes pop{from{transform:scale(0) rotate(-10deg)}to{transform:scale(1) rotate(0)}}
-.success-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:800;text-align:center;margin-bottom:12px;color:var(--gold-light)}
-.success-sub{text-align:center;color:var(--text-muted);font-size:16px;line-height:1.6;margin-bottom:32px;font-weight:300}
-.info-box{
-  background:rgba(255,255,255,0.03);border:1px solid var(--border);
-/* INFO BOX (STEP 5) */
-.info-box{
-  background:rgba(255,255,255,0.03);border:1px solid var(--border);
-  border-radius:16px;padding:24px;margin-bottom:20px;
-  text-align:left;
-}
-.info-box p{font-size:15px;line-height:1.6;color:var(--text);font-weight:300}
-.info-box strong{color:var(--gold);font-weight:600}
-
-/* REMOVER O SEGUNDO ESTILO DO COUNTDOWN DUPLICADO NO FINAL */
-/* COUNTDOWN (Removido para evitar conflitos com o Countdown Elegante) */
-
-/* TOAST */
-.toast{
-  position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);
-  background:var(--bg2);border:1px solid var(--border);border-radius:50px;
-  padding:14px 28px;font-size:14px;font-weight:600;color:var(--gold-light);
-  transition:transform .4s cubic-bezier(.4,0,.2,1);z-index:999;white-space:nowrap;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-.toast.show{transform:translateX(-50%) translateY(0)}
-
-@media(max-width:580px){
-  .card{padding:32px 24px}
-  h1{font-size:26px}
-  .step-title{font-size:22px}
-}
-</style>
-</head>
-<body>
-
-<div class="wrap">
-  <div class="header" id="mainHeader">
-    <div class="badge"><span></span> Oferta Válida Somente Hoje</div>
-    <h1>Condição Exclusiva:<br/><em>Golden Club Ao Vivo</em></h1>
-    <p class="subtitle">O maior evento do ano acontece no <strong>próximo mês</strong>! Responda 4 perguntas rápidas e libere seu convite com desconto único.</p>
-    <div class="incentive-bar">
-      ⏳ <strong>ATENÇÃO:</strong> Esta oferta especial e os bônus expiram hoje à meia-noite!
-      <div class="countdown-box" id="timer">
-         <!-- Contador será renderizado aqui -->
-      </div>
-    </div>
-  </div>
-
-  <div class="progress-wrap" id="progressWrap">
-    <div class="progress-info">
-      <span class="progress-label" id="progressLabel">Etapa 1 de 4</span>
-      <span class="progress-count" id="progressCount">25%</span>
-    </div>
-    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:25%"></div></div>
-  </div>
-
-  <div class="card">
-    <!-- STEP 1: Dados -->
-    <div class="step active" id="step1">
-      <div class="step-title">👋 Vamos começar!</div>
-      <p class="step-desc">Preencha seus dados para verificar a disponibilidade e liberar sua condição especial.</p>
-      <div class="field">
-        <label for="nome">Nome completo</label>
-        <input type="text" id="nome" placeholder="Seu nome completo"/>
-      </div>
-      <div class="field">
-        <label for="whatsapp">WhatsApp</label>
-        <input type="tel" id="whatsapp" placeholder="(00) 00000-0000"/>
-      </div>
-      <div class="field">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="seu@email.com"/>
-      </div>
-      <button class="btn btn-primary" id="btn1" onclick="goStep(2)">Continuar →</button>
-      <p style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 16px; line-height: 1.4; font-weight: 300;">Ao tocar no botão, você aceita nossos Termos de Uso e <a href="politica-privacidade.html" target="_blank" style="color: var(--gold); text-decoration: none;">Política de Privacidade</a>, incluindo cookies e envio de comunicações.</p>
-    </div>
-
-    <!-- STEP 2: Dificuldade -->
-    <div class="step" id="step2">
-      <button class="back-btn" onclick="goStep(1)">← Voltar</button>
-      <div class="step-title">🎯 Desafio Atual</div>
-      <p class="step-desc">Qual é o seu principal desafio no negócio hoje?</p>
-      <div class="options" id="opts2">
-        <div class="option" onclick="selectOpt(this,'desafio','clientes')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Atrair e reter clientes premium</div>
-          <div class="option-sub">Preciso de clientes que paguem mais pelo meu serviço</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'desafio','escala')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Escalar o faturamento e os lucros</div>
-          <div class="option-sub">Sinto que estagnei e não consigo crescer mais</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'desafio','equipe')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Criar processos e gerenciar equipe</div>
-          <div class="option-sub">Trabalho muito no operacional e falta tempo</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'desafio','autoridade')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Posicionamento e autoridade no mercado</div>
-          <div class="option-sub">Quero me tornar a principal referência da minha região</div></div>
-        </div>
-      </div>
-      <button class="btn btn-primary" onclick="goStep(3)">Continuar →</button>
-    </div>
-
-    <!-- STEP 3: Faturamento -->
-    <div class="step" id="step3">
-      <button class="back-btn" onclick="goStep(2)">← Voltar</button>
-      <div class="step-title">💰 Faturamento Atual</div>
-      <p class="step-desc">Qual é o faturamento mensal do seu negócio hoje?</p>
-      <div class="options" id="opts3">
-        <div class="option" onclick="selectOpt(this,'faturamento','Menos de R$2.000')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Menos de R$2.000/mês</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'faturamento','R$2.000 a R$5.000')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">R$2.000 a R$5.000/mês</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'faturamento','R$5.000 a R$15.000')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">R$5.000 a R$15.000/mês</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'faturamento','R$15.000 a R$30.000')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">R$15.000 a R$30.000/mês</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'faturamento','Acima de R$30.000')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Acima de R$30.000/mês</div></div>
-        </div>
-      </div>
-      <button class="btn btn-primary" onclick="goStep(4)">Continuar →</button>
-    </div>
-
-    <!-- STEP 4: Objetivo -->
-    <div class="step" id="step4">
-      <button class="back-btn" onclick="goStep(3)">← Voltar</button>
-      <div class="step-title">🚀 Seu Grande Objetivo</div>
-      <p class="step-desc">O que você mais busca ao participar do Golden Club Ao Vivo?</p>
-      <div class="options" id="opts4">
-        <div class="option" onclick="selectOpt(this,'objetivo','networking')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Networking de Alto Nível</div>
-          <div class="option-sub">Me conectar com grandes nomes do mercado</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'objetivo','estrategias')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Estratégias Práticas e Inovadoras</div>
-          <div class="option-sub">Aprender o que realmente funciona hoje</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'objetivo','parcerias')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Fazer Parcerias e Negócios</div>
-          <div class="option-sub">Expandir minha rede de contatos</div></div>
-        </div>
-        <div class="option" onclick="selectOpt(this,'objetivo','mentalidade')">
-          <div class="option-radio"></div>
-          <div><div class="option-text">Mentalidade e Insights Premium</div>
-          <div class="option-sub">Virar a chave para os próximos milhões</div></div>
-        </div>
-      </div>
-      <button class="btn btn-primary" id="btnSubmit" onclick="submitForm()">🔓 Liberar Minha Oferta</button>
-    </div>
-
-    <!-- STEP 5: Sucesso -->
-    <div class="step" id="step5">
-      <div style="text-align:center">
-        <div class="success-icon">🎫</div>
-        <div class="success-title">Condição Liberada!</div>
-        <p class="success-sub">Parabéns! O seu convite com <strong style="color:var(--gold)">Desconto Especial</strong> para o Golden Club Ao Vivo foi gerado com sucesso.</p>
-        <div class="info-box">
-          <p>📱 <strong>Fique de olho no seu WhatsApp:</strong> A nossa especialista <strong>Hellena</strong> entrará em contato com você em breve para liberar o seu link de inscrição exclusivo.</p>
-        </div>
-        <div class="info-box">
-          <p>📍 <strong>Prepare-se:</strong> O evento presencial acontecerá no <strong>próximo mês</strong>. Nos vemos lá!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
-
-<script>
-// =============================================
-// CONFIGURAÇÃO DO GOOGLE SHEETS
-// =============================================
-// 1. Vá em script.google.com e crie um novo projeto
-// 2. Cole o código do Apps Script (veja abaixo nos comentários)
-// 3. Faça o deploy como Web App (Execute as: Me, Access: Anyone)
-// 4. Cole a URL gerada aqui:
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzoO98jb0fNxztdQrMnqXtGwYjS8dVT4Mq2BNCz6lPFSn72O0W-ihkY7KbURE8Y16Vo/exec';
-
-// CÓDIGO DO APPS SCRIPT (cole no script.google.com):
-/*
-function doPost(e) {
-  var sheet = SpreadsheetApp.openById('SEU_SPREADSHEET_ID').getActiveSheet();
-  var data = JSON.parse(e.postData.contents);
-  sheet.appendRow([
-    new Date(),
-    data.nome, data.whatsapp, data.email,
-    data.dificuldade, data.faturamento, data.objetivo, data.interesse
-  ]);
-  return ContentService.createTextOutput(JSON.stringify({status:'ok'}))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-*/
-// =============================================
-
-const answers = {};
-const totalSteps = 4;
-
-// =============================================
-// LÓGICA DO CONTADOR
-// =============================================
-function startTimer() {
-  const timerEl = document.getElementById('timer');
-  if(!timerEl) return;
-  
-  // Configura a expiração para hoje às 23:59:59 (fim do dia atual)
-  const now = new Date();
-  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-
-  const updateTimer = () => {
-    const current = new Date();
-    const diff = midnight - current;
-    
-    if (diff <= 0) {
-      timerEl.innerHTML = '<div style="color:var(--gold); font-weight:700;">Oferta Expirada</div>';
-      return;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Espera Golden Club 2027</title>
+  <meta name="description" content="Entre para a lista de espera do Golden Club 2027 e receba em primeira mão a melhor condição para participar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0d0f0e;
+      --black-soft: #151816;
+      --green: #19392e;
+      --green-light: #285442;
+      --gold: #c9a46a;
+      --gold-light: #ead7b4;
+      --cream: #f1eadc;
+      --muted: rgba(241, 234, 220, .68);
+      --line: rgba(201, 164, 106, .26);
+      --line-soft: rgba(241, 234, 220, .13);
+      --shadow: 0 24px 80px rgba(0, 0, 0, .38);
+      --radius: 24px;
     }
 
-    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((diff % (1000 * 60)) / 1000);
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    timerEl.innerHTML = `
-      <div class="countdown-item"><div class="time-block">${String(h).padStart(2,'0')}</div><span class="time-label">Horas</span></div>
-      <div class="countdown-item"><div class="time-block">${String(m).padStart(2,'0')}</div><span class="time-label">Min</span></div>
-      <div class="countdown-item"><div class="time-block">${String(s).padStart(2,'0')}</div><span class="time-label">Seg</span></div>
-    `;
-  };
-  
-  updateTimer(); // Executa imediatamente
-  setInterval(updateTimer, 1000);
-}
-startTimer();
-// =============================================
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse 70% 55% at 0% 0%, rgba(201, 164, 106, .11), transparent 65%),
+        radial-gradient(ellipse 70% 65% at 100% 100%, rgba(25, 57, 46, .45), transparent 65%),
+        var(--black);
+      color: var(--cream);
+      font-family: Inter, sans-serif;
+      padding: 22px;
+    }
 
-function updateProgress(step) {
-  const pct = Math.round((step / totalSteps) * 100);
-  document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressLabel').textContent = `Etapa ${step} de ${totalSteps}`;
-  document.getElementById('progressCount').textContent = pct + '%';
-  if (step >= totalSteps) {
-    document.getElementById('progressWrap').style.display = 'none';
-  }
-}
+    body::before {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      opacity: .16;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
 
-function goStep(n) {
-  const current = document.querySelector('.step.active');
-  if (n === 2) {
-    const nome = document.getElementById('nome').value.trim();
-    const wa = document.getElementById('whatsapp').value.trim();
-    const em = document.getElementById('email').value.trim();
-    if (!nome || !wa || !em) { showToast('Preencha todos os campos!'); return; }
-    if (!em.includes('@')) { showToast('E-mail inválido!'); return; }
-    answers.nome = nome; answers.whatsapp = wa; answers.email = em;
-  }
-  if (n === 3) {
-    if (!answers.desafio) { showToast('Selecione uma opção!'); return; }
-  }
-  if (n === 4) {
-    if (!answers.faturamento) { showToast('Selecione uma opção!'); return; }
-  }
+    .page { width: 100%; max-width: 620px; margin: 0 auto; position: relative; z-index: 1; padding: 24px 0 16px; }
 
-  const header = document.getElementById('mainHeader');
-  if (header) {
-    header.style.display = n === 1 ? 'block' : 'none';
-  }
+    .brand { text-align: center; margin-bottom: 26px; }
+    .brand-mark { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; }
+    .brand-rule { width: 74px; height: 1px; margin: 13px auto 0; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 
-  current.classList.remove('active');
-  document.getElementById('step' + n).classList.add('active');
-  updateProgress(n);
-  window.scrollTo({top:0, behavior:'smooth'});
-}
+    .intro { text-align: center; margin-bottom: 28px; }
+    .eyebrow { color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 2.3px; text-transform: uppercase; margin-bottom: 13px; }
+    h1 { font: 800 clamp(34px, 7vw, 54px)/.98 'Playfair Display', serif; letter-spacing: -.8px; }
+    h1 em { color: var(--gold-light); font-style: normal; }
+    .intro p { max-width: 500px; margin: 18px auto 0; color: var(--muted); font-size: 15px; font-weight: 300; line-height: 1.65; }
 
-function selectOpt(el, key, val) {
-  el.closest('.options').querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
-  el.classList.add('selected');
-  answers[key] = val;
-}
+    .benefit-strip { display: flex; align-items: center; gap: 12px; margin-top: 21px; padding: 14px 17px; border: 1px solid var(--line); border-radius: 13px; background: linear-gradient(110deg, rgba(201,164,106,.13), rgba(25,57,46,.54)); color: var(--muted); font-size: 13px; line-height: 1.45; text-align: left; }
+    .benefit-strip strong { color: var(--gold-light); }
+    .benefit-icon { flex: 0 0 auto; color: var(--gold); font-size: 19px; }
 
-function backgroundSync() {
-  if (APPS_SCRIPT_URL && APPS_SCRIPT_URL !== 'COLE_SUA_URL_AQUI') {
-    try {
-      const formData = new URLSearchParams();
-      for (const key in answers) {
-        formData.append(key, answers[key]);
+    .progress { margin: 0 0 18px; }
+    .progress-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 9px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .progress-top strong { color: var(--gold); }
+    .progress-track { height: 4px; overflow: hidden; border-radius: 10px; background: rgba(255,255,255,.08); }
+    .progress-fill { height: 100%; width: 33.33%; border-radius: inherit; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width .45s ease; }
+
+    .card { position: relative; overflow: hidden; padding: clamp(25px, 6vw, 42px); border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(25,57,46,.78), rgba(13,15,14,.92) 74%); box-shadow: var(--shadow), inset 0 1px rgba(234,215,180,.1); backdrop-filter: blur(18px); }
+    .card::before { content: ""; position: absolute; top: 0; left: 14%; right: 14%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .85; }
+
+    .step { display: none; animation: rise .45s ease both; }
+    .step.active { display: block; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    .step-kicker { color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 10px; }
+    .step-title { color: var(--gold-light); font: 700 clamp(24px, 5vw, 31px)/1.1 'Playfair Display', serif; }
+    .step-copy { margin-top: 10px; margin-bottom: 27px; color: var(--muted); font-size: 15px; line-height: 1.6; font-weight: 300; }
+
+    .field { margin-bottom: 18px; }
+    label { display: block; margin-bottom: 8px; color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+    input, textarea { width: 100%; border: 1px solid var(--line-soft); border-radius: 12px; outline: 0; background: rgba(255,255,255,.045); color: var(--cream); font: 400 16px/1.45 Inter, sans-serif; transition: .25s ease; }
+    input { height: 54px; padding: 0 17px; }
+    textarea { min-height: 124px; resize: vertical; padding: 15px 17px; }
+    input::placeholder, textarea::placeholder { color: rgba(241,234,220,.32); }
+    input:focus, textarea:focus { border-color: var(--gold); background: rgba(255,255,255,.075); box-shadow: 0 0 0 3px rgba(201,164,106,.11); }
+
+    .helper { margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .actions { display: flex; gap: 12px; align-items: center; margin-top: 28px; }
+    .btn { width: 100%; min-height: 56px; border: 0; border-radius: 50px; cursor: pointer; font: 800 13px Inter, sans-serif; letter-spacing: 1.25px; text-transform: uppercase; transition: .25s ease; }
+    .btn-primary { color: var(--green); background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, #aa8349); box-shadow: 0 13px 29px rgba(201,164,106,.2); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(201,164,106,.3); }
+    .btn-primary:disabled { opacity: .58; cursor: not-allowed; transform: none; }
+
+    .privacy { margin-top: 17px; color: rgba(241,234,220,.48); font-size: 11px; line-height: 1.5; text-align: center; }
+    .privacy a { color: var(--gold); text-decoration: none; }
+
+    .success { text-align: center; }
+    .success-seal { width: 88px; height: 88px; display: grid; place-items: center; margin: 0 auto 23px; border: 1px solid rgba(234,215,180,.65); border-radius: 50%; color: var(--green); background: linear-gradient(135deg, var(--gold-light), var(--gold)); font-size: 34px; box-shadow: 0 0 45px rgba(201,164,106,.25); animation: pop .55s cubic-bezier(.2,.75,.25,1.35) both; }
+    @keyframes pop { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .success h2 { color: var(--gold-light); font: 800 clamp(29px, 7vw, 40px)/1.05 'Playfair Display', serif; }
+    .success-lead { margin: 15px auto 25px; color: var(--muted); font-size: 15px; line-height: 1.65; font-weight: 300; }
+    .promise { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: rgba(201,164,106,.075); text-align: left; }
+    .promise strong { display: block; margin-bottom: 8px; color: var(--gold); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+    .promise p { color: var(--cream); font-size: 14px; line-height: 1.65; }
+    .success-note { margin-top: 20px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .footer { margin-top: 19px; color: rgba(241,234,220,.48); font-size: 11px; line-height: 1.6; text-align: center; }
+
+    .toast { position: fixed; z-index: 5; left: 50%; bottom: 26px; max-width: calc(100vw - 40px); padding: 13px 21px; border: 1px solid var(--line); border-radius: 50px; color: var(--gold-light); background: var(--green); box-shadow: 0 12px 35px rgba(0,0,0,.45); font-size: 13px; font-weight: 700; text-align: center; transform: translate(-50%, 120px); transition: transform .35s ease; }
+    .toast.show { transform: translate(-50%, 0); }
+
+    @media (max-width: 500px) {
+      body { padding: 16px; }
+      .page { padding-top: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="brand" aria-label="Golden Club">
+      <div class="brand-mark">Golden Club</div>
+      <div class="brand-rule"></div>
+    </header>
+
+    <section class="intro" id="intro">
+      <div class="eyebrow">Edição 2027 · Lista de espera</div>
+      <h1>Seu próximo capítulo começa <em>agora.</em></h1>
+      <p>Preencha os campos a baixo e receba em primeira mão as novidades do Golden Club 2027 e condições exclusivas para viver essa experiência.</p>
+      <div class="benefit-strip">
+        <span class="benefit-icon">✦</span>
+        <span>Quem estiver na lista terá acesso exclusivo à <strong>melhor oferta</strong> e poderá garantir seu ingresso antes da abertura geral.</span>
+      </div>
+    </section>
+
+    <div class="progress" id="progress">
+      <div class="progress-top"><span id="progressLabel">Etapa 1 de 2</span><strong id="progressCount">50%</strong></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+
+    <section class="card" aria-live="polite">
+      <div class="step active" id="step1">
+        <h2 class="step-title">FORMULÁRIO EXCLUSIVO</h2>
+        <p class="step-copy">Preencha seus dados para entrar na lista de espera oficial do Golden Club 2027.</p>
+
+        <div class="field">
+          <label for="name">Nome completo</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" />
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" />
+        </div>
+        <div class="field">
+          <label for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" />
+        </div>
+
+        <button class="btn btn-primary" type="button" onclick="nextStep()">Quero entrar na lista →</button>
+        <p class="privacy">Ao tocar no botão, você aceita nossos Termos de Uso e <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a>, incluindo cookies e envio de comunicações.</p>
+      </div>
+
+      <div class="step" id="step2">
+        <div class="step-kicker">Sugestão para próxima edição</div>
+        <h2 class="step-title">Quem você gostaria de ver no palco?</h2>
+        <p class="step-copy">Tem alguma mentora, especialista ou convidada que faria a diferença no Golden Club 2027? Conte para a gente.</p>
+
+        <div class="field">
+          <label for="guest">Sugestão de convidada/o</label>
+          <textarea id="guest" name="guest" placeholder="Nome, perfil ou área de atuação que você gostaria de ver no evento..."></textarea>
+          <p class="helper">Sua sugestão será considerada pela curadoria da próxima edição.</p>
+        </div>
+
+        <div class="field">
+          <label for="city">Sugestão de cidade</label>
+          <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="Em qual cidade você gostaria de viver o Golden Club?" />
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="submitButton" type="button" onclick="submitWaitlist()">Finalizar cadastro ✦</button>
+        </div>
+        <p class="privacy">Ao tocar no botão, você aceita nossos Termos de Uso e <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a>, incluindo cookies e envio de comunicações.</p>
+      </div>
+
+      <div class="step success" id="successStep">
+        <div class="success-seal">✓</div>
+        <h2>Cadastro feito.</h2>
+        <p class="success-lead">Você já está na lista de espera do <strong>Golden Club 2027</strong>. Agora é só ficar de olho no seu WhatsApp e no seu e-mail.</p>
+        <div class="promise">
+          <strong>Uma vantagem para quem chega primeiro</strong>
+          <p>Assim que a nova edição for anunciada, você receberá exclusivamente por aqui a melhor oportunidade para participar — com prioridade de acesso, condições especiais e o melhor custo-benefício disponível.</p>
+        </div>
+        <p class="success-note">Quando as portas do Golden Club 2027 se abrirem, você vai saber antes da maioria.</p>
+      </div>
+    </section>
+
+    <footer class="footer">Golden Club · Lista de espera 2027<br />Seus dados estão protegidos e serão usados apenas para comunicações relacionadas ao evento.</footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    // Opcional: informe aqui a URL de um endpoint que receba os dados do formulário.
+    // Exemplo compatível: Google Apps Script publicado como Web App.
+    const SUBMIT_ENDPOINT = '';
+    const answers = {};
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      window.setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function updateProgress(step) {
+      const percentage = step === 1 ? 50 : 100;
+      document.getElementById('progressFill').style.width = percentage + '%';
+      document.getElementById('progressLabel').textContent = step === 1 ? 'Etapa 1 de 2' : 'Etapa 2 de 2';
+      document.getElementById('progressCount').textContent = percentage + '%';
+    }
+
+    function nextStep() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const whatsapp = document.getElementById('whatsapp').value.trim();
+
+      if (!name || !email || !whatsapp) {
+        showToast('Preencha nome, e-mail e WhatsApp para continuar.');
+        return;
       }
-      fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData
-      });
-    } catch(e) { console.warn('Erro no sync:', e); }
-  }
-}
+      if (!email.includes('@') || !email.includes('.')) {
+        showToast('Confira o e-mail informado.');
+        return;
+      }
 
-async function submitForm() {
-  if (!answers.objetivo) { showToast('Selecione uma opção!'); return; }
-  const btn = document.getElementById('btnSubmit');
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-  
-  // O último sync é chamado e aguardamos um breve momento para melhor UX
-  backgroundSync();
-  setTimeout(() => {
-    document.getElementById('step4').classList.remove('active');
-    document.getElementById('step5').classList.add('active');
-    document.getElementById('progressWrap').style.display = 'none';
-    const header = document.getElementById('mainHeader');
-    if (header) header.style.display = 'none';
-  }, 600);
-}
+      answers.name = name;
+      answers.email = email;
+      answers.whatsapp = whatsapp;
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step2').classList.add('active');
+      updateProgress(2);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2800);
-}
+    async function submitWaitlist() {
+      const button = document.getElementById('submitButton');
+      answers.guest = document.getElementById('guest').value.trim();
+      answers.city = document.getElementById('city').value.trim();
+      answers.source = 'golden-club-2027-waitlist';
+      answers.createdAt = new Date().toISOString();
 
-// Máscara WhatsApp
-document.getElementById('whatsapp').addEventListener('input', function() {
-  let v = this.value.replace(/\D/g,'').substring(0,11);
-  if (v.length > 6) v = '(' + v.substring(0,2) + ') ' + v.substring(2,7) + '-' + v.substring(7);
-  else if (v.length > 2) v = '(' + v.substring(0,2) + ') ' + v.substring(2);
-  else if (v.length > 0) v = '(' + v;
-  this.value = v;
-});
-</script>
+      button.disabled = true;
+      button.textContent = 'Salvando...';
+
+      try {
+        if (SUBMIT_ENDPOINT) {
+          await fetch(SUBMIT_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(answers)
+          });
+        }
+        document.getElementById('step2').classList.remove('active');
+        document.getElementById('successStep').classList.add('active');
+        document.getElementById('progress').style.display = 'none';
+        document.getElementById('intro').style.display = 'none';
+      } catch (error) {
+        console.warn('Não foi possível enviar os dados:', error);
+        showToast('Não foi possível concluir agora. Tente novamente.');
+        button.disabled = false;
+        button.textContent = 'Finalizar cadastro ✦';
+      }
+    }
+
+    document.getElementById('whatsapp').addEventListener('input', function () {
+      let value = this.value.replace(/\D/g, '').slice(0, 11);
+      if (value.length > 7) value = '(' + value.slice(0, 2) + ') ' + value.slice(2, 7) + '-' + value.slice(7);
+      else if (value.length > 2) value = '(' + value.slice(0, 2) + ') ' + value.slice(2);
+      else if (value.length > 0) value = '(' + value;
+      this.value = value;
+    });
+  </script>
 </body>
 </html>
